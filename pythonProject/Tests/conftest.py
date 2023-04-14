@@ -29,4 +29,6 @@ def get_token():
     access_token = json_results['access_token']
     return access_token
 
-
+@pytest.fixture( scope="session")
+def get_auth_header(token):
+    return {"Authorization" : "Bearer "+ token}

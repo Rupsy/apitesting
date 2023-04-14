@@ -1,0 +1,3 @@
+class Configu:
+
+    BASE_URL= "https://api.spotify.com/v1"
