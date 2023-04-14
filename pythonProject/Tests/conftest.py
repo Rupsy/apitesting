@@ -7,8 +7,8 @@ import pytest
 
 
 
-client_id = "75019065a1aa4a599c64698ef08eb7fa"
-client_secret = "363e06c1f38f40798373255a88b7c422"
+client_id = "ckkk"
+client_secret = "cccc"
 
 @pytest.fixture( scope="session")
 def get_token():
