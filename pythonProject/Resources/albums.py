@@ -8,16 +8,24 @@ from Config.config import Configu
 
 class Albums:
 
-    def search_for_artist( header , artist_name):
+    def search_for_albums_by_artist( header , artist_id):
 
-        url = Configu.BASE_URL+"/search"
-        query = f"?q={artist_name}&type=artist&limit=1"
-        query_url = url + query
+        url = Configu.BASE_URL+f"/artists/{artist_id}/top-tracks?country=US"
 
-        req = requests.get(query_url , headers = header)
+        ans = []
+
+        req = requests.get(url , headers = header)
         #headers = {"HTTP_HOST": "MyVeryOwnHost"}
         json_response = json.loads(req.content)
-        print  (json_response)
+        all_tracks_artist_det = json_response['tracks']
+
+        for i in range(len(all_tracks_artist_det)):
+            ans.append(all_tracks_artist_det[i]['name'])
+
+
+
+
+
 
 
 
